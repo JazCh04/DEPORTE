@@ -2,10 +2,14 @@
 #Bienvenida
 print ("Bienvenid@ a la aplicación FitEnergy")
 
-#Extraer etiqueta de los paquetes UIX de Kivy
-from kivy.uix.label import Label
+#Importar marcos para app y widget de diseño
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
 
-#Crear aplicación principal
-class SimpleKivy:
-    def build(self):
-         return Label(text="Bienvenido")
+#Importar etiqueta de los paquetes UIX, botones y textos
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
+
+#Importar interfaz para web de usuarios
+import webbrowser
