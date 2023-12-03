@@ -36,7 +36,7 @@ class MyButton (Button):
     #_int_ inicializar los atributos de la clase my button
     def _int_(self,**kwargs):
         super(MyButton,self)._int_(**kwargs)
-        self.text = 'Visualizacion'
+        self.text = 'Registro'
         self.size_hint = (0.2, 0.2)
         self.post_hint = {0.4, 0.4}
         self.blind(on_press=self.imprimir_mensaje)
