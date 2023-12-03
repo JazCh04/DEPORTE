@@ -13,3 +13,34 @@ from kivy.uix.textinput import TextInput
 
 #Importar interfaz para web de usuarios
 import webbrowser
+
+#Crear pantalla
+
+
+#Colocar boton visualizacion en el menu principal
+class MyButton (Button):
+    #_int_ inicializar los atributos de la clase my button
+    def _int_(self,**kwargs):
+        super(MyButton,self)._int_(**kwargs)
+        self.text = 'Visualizacion'
+        self.size_hint = (0.2, 0.2)
+        self.post_hint = {0.4, 0.4}
+        self.blind(on_press=self.imprimir_mensaje)
+
+class MyApp(App):
+    def build(self):
+        return MyButton()
+    
+#Colocar boton registro en el menu principal
+class MyButton (Button):
+    #_int_ inicializar los atributos de la clase my button
+    def _int_(self,**kwargs):
+        super(MyButton,self)._int_(**kwargs)
+        self.text = 'Visualizacion'
+        self.size_hint = (0.2, 0.2)
+        self.post_hint = {0.4, 0.4}
+        self.blind(on_press=self.imprimir_mensaje)
+
+class MyApp(App):
+    def build(self):
+        return MyButton()
