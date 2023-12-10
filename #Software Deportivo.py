@@ -27,24 +27,28 @@ class Simplekivy (App):
         
 #Funcion para la acciones de los botones
         def accion2 (self, instance):
-                #Ingresar mail, contrasena y validar longitud de la misma
+                #Solicitar mail y contrasena
                 mail = input("Ingresa tu correo electrónico: ")
-        while True:
                 contrasena = input("Ingresa tu contraseña: ")
-                if len(contrasena) < 8:
-                        print ('La contrasena es demasiado corta, debe tener al menos 8 caracteres')
-                else: 
-                        print ('Tu registro se ha realizado correctamente')
+                #Validar si la contrasena longitud de la contrasena 
+                while True:
+                        if len(contrasena) < 8:
+                                print ('La contrasena es demasiado corta, debe tener al menos 8 caracteres')
+                        else: 
+                                print ('Tu registro se ha realizado correctamente')
                         break
         def accion1 (self, instance):
+                #Solicitar mail y contrasena
                 ingmail = input ('Correo electronico: ')
                 ingcontrasena = input ('Contrasena:  ')
-        while True:
-                if contrasena != contrasena:
-                        print ("La contrasena no coincide. Intentalo de nuevo.")
-                else: 
-                        print ('Bienvenido')
-                break
+                confcontrasena = input ('Confirmar contrasena: ')
+                #Validar si la contrasena coincide
+                while True:
+                        if ingcontrasena != confcontrasena:
+                                print ("La contrasena no coincide. Intentalo de nuevo.")
+                        else: 
+                                print ('Bienvenido')
+                        break
 
 if __name__== "__main__":
             Simplekivy().run()
