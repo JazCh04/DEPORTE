@@ -6,53 +6,30 @@ from kivy.uix.boxlayout import BoxLayout
 #Importar etiqueta de los paquetes UIX, botones y textos
 from kivy.uix.label import Label
 from kivy.uix.button import Button
-from kivy.uix.textinput import TextInput
-from kivy.uix.gridlayout import GridLayout
-from functools import partial
+#Crear pantalla y mantenerla abierta mientras se ejecuta
+#Definir variables para retornar las clases
+class Simplekivy (App):
+        def build (self):
+            contenedor = BoxLayout(orientation = 'horizontal', spacing = 10, padding = (10,10,10,10))
+            boton1 = Button (text = 'Visualizar', size_hint_y = None,height = 50)
+            boton2 = Button (text = 'Registrarse', size_hint_y = None,height = 50)
+            etiqueta = Label (text = 'Bienvenid@ a la aplicación FitEnergy') 
+            contenedor.add_widget (etiqueta)
 
-#Importar interfaz para web de usuarios
-import webbrowser
+#Funcionalidad de los botones
+            boton1.bind (on_press = self.accion1)
+            boton2.bind (on_press = self.accion2)
 
-#Crear pantalla
-class SimpleScreen (BoxLayout):
-    def _init_(self,**kwargs):
-        super (SimpleScreen, self)._init_(**kwargs)
-        self.orientacion = 'vertical'
-        self.add_widget(Label(text = 'Bienvenid@ a la aplicación FitEnergy'))   
+#colocar botones en el pie de pagina
+            contenedor.add_widget (boton1)
+            contenedor.add_widget (boton2)
+            return contenedor
+        
+#Funcion para la acciones de los botones
+        def accion1 (self, instance):
+                print ("Hola Jaz")
+        def accion2 (self, instance):
+                print ("Hola Migue")
 
-#Mantener la pantalla abierta
-while True:
-    class SimpleApp (App):
-        def build(self):
-            return SimpleScreen ()
-    
-    if __name__ =='_main_':
-        SimpleApp().run()
-
-#Colocar boton visualizacion en el menu principal
-class MyButton (Button):
-    #_int_ inicializar los atributos de la clase my button
-    def _int_(self,**kwargs):
-        super(MyButton,self)._int_(**kwargs)
-        self.text = 'Visualizacion'
-        self.size_hint = (0.2, 0.2)
-        self.post_hint = {0.4, 0.4}
-        self.blind(on_press=self.imprimir_mensaje)
-
-class MyApp(App):
-    def build(self):
-        return MyButton()
-    
-#Colocar boton registro en el menu principal
-class MyButton (Button):
-    #_int_ inicializar los atributos de la clase my button
-    def _int_(self,**kwargs):
-        super(MyButton,self)._int_(**kwargs)
-        self.text = 'Registro'
-        self.size_hint = (0.2, 0.2)
-        self.post_hint = {0.4, 0.4}
-        self.blind(on_press=self.imprimir_mensaje)
-
-class MyApp(App):
-    def build(self):
-        return MyButton()
+if __name__== "__main__":
+            Simplekivy().run()
