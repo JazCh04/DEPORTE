@@ -10,26 +10,41 @@ from kivy.uix.button import Button
 #Definir variables para retornar las clases
 class Simplekivy (App):
         def build (self):
-            contenedor = BoxLayout(orientation = 'horizontal', spacing = 10, padding = (10,10,10,10))
-            boton1 = Button (text = 'Visualizar', size_hint_y = None,height = 50)
+            pantalla = BoxLayout(orientation = 'horizontal', spacing = 10, padding = (10,10,10,10))
+            boton1 = Button (text = 'Iniciar sesion', size_hint_y = None,height = 50)
             boton2 = Button (text = 'Registrarse', size_hint_y = None,height = 50)
-            etiqueta = Label (text = 'Bienvenid@ a la aplicación FitEnergy') 
-            contenedor.add_widget (etiqueta)
+            etiqueta = Label (text = 'Athlete App') 
+            pantalla.add_widget (etiqueta)
 
 #Funcionalidad de los botones
-            boton1.bind (on_press = self.accion1)
+            boton1.bind (on_press = self.accion1)    
             boton2.bind (on_press = self.accion2)
 
-#colocar botones en el pie de pagina
-            contenedor.add_widget (boton1)
-            contenedor.add_widget (boton2)
-            return contenedor
+#colocar botones en la pantalla
+            pantalla.add_widget (boton1)
+            pantalla.add_widget (boton2)
+            return pantalla
         
 #Funcion para la acciones de los botones
-        def accion1 (self, instance):
-                print ("Hola Jaz")
         def accion2 (self, instance):
-                print ("Hola Migue")
+                #Ingresar mail, contrasena y validar longitud de la misma
+                mail = input("Ingresa tu correo electrónico: ")
+        while True:
+                contrasena = input("Ingresa tu contraseña: ")
+                if len(contrasena) < 8:
+                        print ('La contrasena es demasiado corta, debe tener al menos 8 caracteres')
+                else: 
+                        print ('Tu registro se ha realizado correctamente')
+                        break
+        def accion1 (self, instance):
+                ingmail = input ('Correo electronico: ')
+                ingcontrasena = input ('Contrasena:  ')
+        while True:
+                if contrasena != contrasena:
+                        print ("La contrasena no coincide. Intentalo de nuevo.")
+                else: 
+                        print ('Bienvenido')
+                break
 
 if __name__== "__main__":
             Simplekivy().run()
