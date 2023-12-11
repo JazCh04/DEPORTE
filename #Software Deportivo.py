@@ -30,7 +30,7 @@ class Simplekivy (App):
                 #Solicitar mail y contrasena
                 mail = input("Ingresa tu correo electrónico: ")
                 contrasena = input("Ingresa tu contraseña: ")
-                #Validar si la contrasena longitud de la contrasena 
+                #Validar la longitud de la contrasena 
                 while True:
                         if len(contrasena) < 8:
                                 print ('La contrasena es demasiado corta, debe tener al menos 8 caracteres')
