@@ -34,9 +34,11 @@ class Simplekivy (App):
                 while True:
                         if len(contrasena) < 8:
                                 print ('La contrasena es demasiado corta, debe tener al menos 8 caracteres')
+                                mail = input("Ingresa tu correo electrónico: ")
+                                contrasena = input("Ingresa tu contraseña: ")
                         else: 
                                 print ('Tu registro se ha realizado correctamente')
-                        break
+                                break
         def accion1 (self, instance):
                 #Solicitar mail y contrasena
                 ingmail = input ('Correo electronico: ')
@@ -46,9 +48,12 @@ class Simplekivy (App):
                 while True:
                         if ingcontrasena != confcontrasena:
                                 print ("La contrasena no coincide. Intentalo de nuevo.")
+                                ingmail = input ('Correo electronico: ')
+                                ingcontrasena = input ('Contrasena:  ')
+                                confcontrasena = input ('Confirmar contrasena: ')
                         else: 
                                 print ('Bienvenido')
-                        break
+                                break
 
 if __name__== "__main__":
             Simplekivy().run()
